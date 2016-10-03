@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="myApp1">
+<head>
+<meta charset="UTF-8">
+<script src="bower_components/angular/angular.js"></script>
+<title>San Diego Top Spots Angular</title>
+<script src="bower_components/jquery/dist/jquery.js"></script> 
+<!-- Latest bootstrap, compiled and minified CSS --> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+<!-- Optional theme --> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> 
+<!-- Latest compiled and minified JavaScript --> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<!-- Bootstrap columns to table headers and table rows -->
+<!-- gets the view to know about the controller -->
+<!-- bindind data to the view  -->
+  <div class="container" ng-controller="myCtrl">
+  <table class="table table-striped" id="info">
+  	<thead>
+  		<tr>
+			  <th>Name</th>
+			  <th>Description</th>   
+			  <th>link</th>
+			</tr>
+		</thead>
+	<tbody>
+	<!-- adding directive which allows to bind multiple items that are organized in a list or an object to the view. -->
+	<!-- directing what item is looping through -->
+	<tr ng-repeat= "x in topspots ">
+
+		        <td>{{x.name}}</td>
+		        <td>{{x.description}}</td>
+				<td><button><a href="https://www.google.com/maps?q={{x.location[0]}},{{x.location[1]}}"><button type 'button' class= 'btn btn-primary'>Google Maps</button></a></td>
+			</tr> 
+		</tbody>
+	</table>
+</div>
+
+<!-- inject js -->
+<script src="index.js"></script>
+
+</body>
+
+</html>
